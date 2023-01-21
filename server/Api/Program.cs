@@ -1,4 +1,8 @@
+using DAL;
+using BLL;
 using Api.Helpers;
+using BLLAbstractions;
+using DALAbstractions;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +22,9 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;
 });
+
+builder.Services.AddSingleton<IUnitOfWork>(_ => new UnitOfWork(connectionString));
+builder.Services.AddScoped<IClubsService, ClubsService>();
 
 builder.Services.AddControllers();
 

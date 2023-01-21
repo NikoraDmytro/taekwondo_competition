@@ -7,7 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="DataTransferObjects" />
+      <PackageReference Include="MySql.Data" Version="8.0.32" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Core\Core.csproj" />
+      <ProjectReference Include="..\DALAbstractions\DALAbstractions.csproj" />
     </ItemGroup>
 
 </Project>

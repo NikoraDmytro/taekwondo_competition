@@ -1,3 +1,4 @@
+using BLLAbstractions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -6,13 +7,19 @@ namespace Api.Controllers
     [Route("api/clubs")]
     public class ClubsController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult GetClubs()
+        private readonly IClubsService _clubsService;
+
+        public ClubsController(IClubsService clubsService)
         {
-            return Ok(new {
-                id = 1, 
-                name = "Білий Ведмідь"
-            });
+            _clubsService = clubsService;
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> GetClubs()
+        {
+            var clubs = await _clubsService.GetClubs();
+
+            return Ok(clubs.ToList());
         }
     }
 }
