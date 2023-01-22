@@ -283,7 +283,8 @@
       },
       "DALAbstractions/1.0.0": {
         "dependencies": {
-          "Core": "1.0.0"
+          "Core": "1.0.0",
+          "MySql.Data": "8.0.32"
         },
         "runtime": {
           "DALAbstractions.dll": {}
