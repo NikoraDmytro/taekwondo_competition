@@ -1,0 +1,45 @@
+.checkbox {
+  width: 24px;
+  height: 24px;
+  display: block;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    visibility: hidden;
+
+    &:checked + .checkmark {
+      transform: rotateY(360deg);
+      border-color: rgb(64, 63, 63);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .checkmark {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin-right: 12px;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid gray;
+
+    &::after {
+      opacity: 0;
+      width: 8px;
+      height: 4px;
+      content: "";
+      inset: 45% 50%;
+      border-radius: 2px;
+      position: absolute;
+      transition: opacity 0.1s ease;
+      border-left: 3px solid black;
+      border-bottom: 3px solid black;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}

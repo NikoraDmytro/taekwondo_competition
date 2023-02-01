@@ -1,6 +1,9 @@
+using Api.ActionFilters;
 using DAL;
 using BLL;
 using Api.Helpers;
+using Api.Profiles;
+using AutoMapper;
 using BLLAbstractions;
 using DALAbstractions;
 using Microsoft.AspNetCore.Mvc;
@@ -23,8 +26,23 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     options.SuppressModelStateInvalidFilter = true;
 });
 
-builder.Services.AddSingleton<IUnitOfWork>(_ => new UnitOfWork(connectionString));
+var mapperConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile<ClubProfile>();
+    mc.AddProfile<SportsmanProfile>();
+    mc.AddProfile<CompetitorProfile>();
+    mc.AddProfile<CompetitionProfile>();
+});
+
+IMapper mapper = mapperConfig.CreateMapper();
+
+builder.Services.AddScoped<ValidationFilterAttribute>();
 builder.Services.AddScoped<IClubsService, ClubsService>();
+builder.Services.AddScoped<ISportsmansService, SportsmansService>();
+builder.Services.AddScoped<ICompetitorsService, CompetitorsService>();
+builder.Services.AddScoped<ICompetitionsService, CompetitionsService>();
+builder.Services.AddSingleton<IUnitOfWork>(_ => new UnitOfWork(connectionString));
+builder.Services.AddSingleton(mapper);
 
 builder.Services.AddControllers();
 
@@ -38,6 +56,9 @@ app.UseMiddleware<ErrorHandlerMiddleware>();
 app.UseCors("CorsPolicy");
 
 app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {

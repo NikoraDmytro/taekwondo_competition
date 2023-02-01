@@ -1,0 +1,57 @@
+.container {
+  font-size: 18px;
+  margin-block: 1em;
+  text-align: center;
+
+  > ul {
+    list-style-type: none;
+  }
+}
+
+.page,
+.prevLabel,
+.nextLabel,
+.breakLabel {
+  margin: 5px;
+  display: inline-block;
+
+  > a {
+    padding: 0.5em;
+    color: black;
+    display: block;
+    min-width: 1em;
+    cursor: pointer;
+    border: 1px solid #d8eef5;
+  }
+
+  > a:hover {
+    background-color: #d8eef5;
+  }
+}
+
+.active {
+  border: 1px solid #1b7d9e;
+  background-color: #f3fcff;
+}
+
+.disabled {
+  color: #ccc;
+  border-color: #eee;
+  background-color: #f8f8f8;
+
+  > a {
+    cursor: default;
+  }
+
+  > a:hover {
+    background-color: #f8f8f8;
+  }
+}
+
+.nextLabel {
+  margin-left: 1em;
+}
+
+.prevLabel {
+  margin-right: 1em;
+}

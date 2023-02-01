@@ -1,0 +1,15 @@
+.selectInput {
+  label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 0.75em;
+  }
+}
+
+.inputError {
+  color: red;
+  display: block;
+  margin-top: 6px;
+  font-style: italic;
+  position: absolute;
+}

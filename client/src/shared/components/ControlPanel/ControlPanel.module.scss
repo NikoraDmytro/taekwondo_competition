@@ -1,0 +1,48 @@
+.controlPanel {
+  gap: 2em;
+  width: 100%;
+  display: flex;
+  margin-block: 3em;
+  flex-direction: column;
+}
+
+.filtersBlock {
+  gap: 2em;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.controlPanelBox {
+  gap: 2em;
+  display: flex;
+  flex-direction: row;
+}
+
+.buttonsBlock {
+  align-self: flex-end;
+
+  button {
+    border: none;
+    outline: none;
+    width: 170px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 12px 8px;
+    border-radius: 8px;
+    background-color: rgb(7 173 173);
+
+    &:hover {
+      background-color: rgb(4, 106, 106);
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: rgb(177, 191, 191);
+    }
+  }
+}

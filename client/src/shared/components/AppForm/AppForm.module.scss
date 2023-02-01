@@ -1,0 +1,46 @@
+.lastRow {
+  gap: 2em;
+  display: grid;
+  overflow: visible;
+  width: fit-content;
+  grid-column: 1 / -1;
+  grid-template-columns: 300px 300px;
+}
+
+.submitBtn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  grid-column: 2;
+  width: 248px;
+  height: 60px;
+  color: white;
+  font-size: 18px;
+  margin-top: 1em;
+  border-radius: 10px;
+  background-color: rgb(7 173 173);
+
+  &:hover {
+    background-color: rgb(4, 106, 106);
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.formTitle {
+  margin: 1em;
+  font-size: 42px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.form {
+  gap: 2em;
+  margin: auto;
+  display: grid;
+  overflow: visible;
+  width: fit-content;
+  grid-template-columns: 300px 300px;
+}

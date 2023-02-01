@@ -1,0 +1,41 @@
+.tableButtons {
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    padding: 12px 8px;
+    border-radius: 2px;
+    background-color: rgb(7, 173, 173);
+
+    &:hover {
+      background-color: rgb(16, 206, 206);
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  button:first-of-type {
+    margin-right: 10px;
+  }
+
+  .edit {
+    background-color: rgb(139, 172, 172);
+
+    &:hover {
+      background-color: rgb(96, 119, 119);
+    }
+  }
+
+  .delete {
+    color: white;
+    background-color: rgb(212, 10, 10);
+
+    &:hover {
+      background-color: rgb(136, 6, 6);
+    }
+  }
+}

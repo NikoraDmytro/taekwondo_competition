@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  overflow: auto;
+  margin-right: -30px;
+}
+
+.dataTable {
+  width: 100%;
+
+  &.selectable tbody > tr:hover {
+    width: 200px;
+    cursor: pointer;
+    background-color: rgb(183, 169, 169);
+  }
+}
+
+.headCells {
+  padding: 12px 8px 12px 8px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #888888;
+  position: relative;
+
+  &.sortable {
+    padding-right: 20px;
+  }
+
+  .sortBtn {
+    top: 50%;
+    width: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    translate: 0 -50%;
+    position: absolute;
+    overflow-x: hidden;
+    background: transparent;
+
+    img {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+
+.tableCells {
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  padding: 8px;
+}
